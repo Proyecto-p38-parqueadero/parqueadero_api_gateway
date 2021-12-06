@@ -34,11 +34,11 @@ const usuarioTypes = gql `
         email   :String!
     }
 
-    extend type Query {
+    type Query {
         userDetailById(userId:Int!):UserDetail!
     }
 
-    extend type Mutation{
+    type Mutation{
         signUpUser(userInput:SignUpInput):Tokens!
         logIn(credentials:CredentialsInput!):Tokens!
         refreshToken(refresh: String!):Access!

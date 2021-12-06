@@ -1,4 +1,4 @@
-import usuarioAPI from "../dataSources/usuario_api";
+
 
 const userResolver = {
     Query: {
@@ -21,10 +21,10 @@ const userResolver = {
             
         },
         logIn: async(_, { credentials }, { dataSources }) => {
-            return await dataSources.authAPI.authRequest(credentials);
+            return await dataSources.usuarioAPI.authRequest(credentials);
         },
-        refreshToken: async(_, { token }, { dataSources }) => {
-            return await dataSources.authAPI.refreshToken(token);
+        refreshToken: async(_, { refresh }, { dataSources }) => {
+            return await dataSources.usuarioAPI.refreshToken(refresh);
         },
        
     }

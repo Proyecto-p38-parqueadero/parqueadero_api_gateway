@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server');
 
     const parqueaderoTipeDefs = gql `
-        type Parking {
+        type ParkingCreate {
             nombre: String!
             administrador: String!
             telefono: String!
@@ -21,8 +21,8 @@ const { gql } = require('apollo-server');
         parqueaderoByUsername(nombre: String!): Parking
     }
     extend type Mutation {
-        createparqueaero(Parqueadero: Parking!): Parking
-        updateparqueadero(Parqueadero:   parqueaderoloUpdate!): Parking
+        createparqueaero(ParqueaderoCreate: ParkingCreate!): Parking
+        updateparqueadero(ParqueaderoActualziar:   parqueaderoloUpdate!): Parking
         deleteparqueadero(parqueaderoId:  String!): String
 
      }
