@@ -1,22 +1,26 @@
 const { gql } = require('apollo-server');
 
     const vehiculoTipeDefs = gql `
-        type vehiculoCreate {
+        input  vehiculoCreate {
             placa: String!
             propietario: String!
             
         }
-        type vehiculoUpdate {
+        input  vehiculoUpdate {
+            placa: String!
+            propietario: String!
+        }
+        type  vehiculoDetail {
             placa: String!
             propietario: String!
         }
 
         extend type Query {
-            vehiculoByplaca(placa: String!): vehiculo
+            vehiculoByplaca(placa: String!): vehiculoDetail
         }
         extend type Mutation {
-            createvehiculo(VehiculoCrear: vehiculoCreate!): vehiculo
-            updatevehiculo(Vehiculoactualizar:  vehiculoUpdate!): vehiculo
+            createvehiculo(VehiculoCrear: vehiculoCreate!): vehiculoDetail
+            updatevehiculo(Vehiculoactualizar:  vehiculoUpdate!): vehiculoDetail
             deletevehiculo(vehiculoId:  String!): String
 
             }
