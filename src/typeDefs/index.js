@@ -1,4 +1,4 @@
-// call all typeDefs
+// call all typeDefs m
 const usuarioTypes        = require("./usuario")
 const vehiculoTipeDefs     = require('./vehiculo')
 const parqueaderoTipeDefs = require('./parqueadero')
