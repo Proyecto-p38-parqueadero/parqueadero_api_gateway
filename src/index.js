@@ -12,7 +12,7 @@ context: authentication,
         typeDefs,
         resolvers,
         dataSources : () => ({
-                        parqueadero_API : new parqueadero_Api(),
+                        parqueadero_API : new parqueadero_API(),
                         usuario_API : new usuario_API(),
                         vehuculo_API   : new vehuculo_API() 
         }),
