@@ -23,7 +23,7 @@ const parqueaderoResolver = {
                 ciudad: ParqueaderoCreate.ciudad
                 
             } 
-           return await dataSources.parqueaderoAPI.parqueaderoCrear(parqueaderoCrear);
+           return await dataSources.parqueaderoAPI.createparqueadero(parqueaderoCrear);
   
       },
 
