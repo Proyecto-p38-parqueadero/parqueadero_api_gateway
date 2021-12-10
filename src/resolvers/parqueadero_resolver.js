@@ -2,8 +2,8 @@ const parqueaderoResolver = {
 
     Query: {
 
-        parqueaderoByUsername: async(_, {nombre},{dataSources} ) => { 
-            return await dataSources.parqueaderoAPI.getparqueadero(nombre);
+        parqueaderoByUsername: async(_, {id},{dataSources} ) => { 
+            return await dataSources.parqueaderoAPI.getparqueadero(id);
             }
   
       

@@ -17,7 +17,7 @@ class vehiculoAPI extends RESTDataSource{
     
     async deletevehiculo(placa) {
         
-        return await this.delete(`/vehiculo/all/${placa}/`);
+        return await this.delete(`/vehiculo/delete/${placa}/`);
     }
     async updatevehiculo(vehiculo) {
         vehiculo = new Object(JSON.parse(JSON.stringify(vehiculo)));

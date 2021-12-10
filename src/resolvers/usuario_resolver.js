@@ -2,11 +2,10 @@
 
 const userResolver = {
     Query: {
-        userDetailById: async(_, {userId}, { dataSources, userIdToken }) => {
-            if(userId == userIdToken)
+        userDetailById: async(_, {userId}, { dataSources }) => {
+            
                 return await dataSources.usuarioAPI.getUser(userId)
-            else
-                return null;
+            
         }
     },
     Mutation: {
@@ -18,7 +17,7 @@ const userResolver = {
                 name     : userInput.name,
                 email    : userInput.email 
             }
-            
+            return await dataSources.usuarioAPI.createUser(authInput);
         },
         logIn: async(_, { credentials }, { dataSources }) => {
             return await dataSources.usuarioAPI.authRequest(credentials);
