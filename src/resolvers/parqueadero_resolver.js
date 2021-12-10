@@ -3,7 +3,7 @@ const parqueaderoResolver = {
     Query: {
 
         parqueaderoByUsername: async(_, {nombre},{dataSources} ) => { 
-            return await dataSources.parqueaderoApi.getparqueadero(nombre);
+            return await dataSources.parqueaderoAPI.getparqueadero(nombre);
             }
   
       
@@ -23,18 +23,18 @@ const parqueaderoResolver = {
                 ciudad: ParqueaderoCreate.ciudad
                 
             } 
-           return await dataSources.parqueaderoApi.parqueaderoCrear(parqueaderoCrear);
+           return await dataSources.parqueaderoAPI.parqueaderoCrear(parqueaderoCrear);
   
       },
 
 
         updateparqueadero: async(_, {ParqueaderoActualziar}, {dataSources}) => {
-            return await dataSources.parqueaderoApi.updateparqueadero(ParqueaderoActualziar);
+            return await dataSources.parqueaderoAPI.updateparqueadero(ParqueaderoActualziar);
 
         },
 
         deleteparqueadero: async(_, {parqueaderoId}, {dataSources}) => {
-            return await dataSources.parqueaderoApi.deleteparqueadero(parqueaderoId);
+            return await dataSources.parqueaderoAPI.deleteparqueadero(parqueaderoId);
 
         }
     }   

@@ -3,18 +3,18 @@ const {ApolloServer} = require('apollo-server');
 const resolvers = require('./resolvers');
 const typeDefs = require('./typeDefs');
 const authentication = require('./utils/autenticacion');
-const parqueadero_API = require('./dataSources/parqueadero_API');
-const usuario_API = require('./dataSources/usuario_API');
-const vehuculo_API = require('./dataSources/vehiculo_API');
+const parqueaderoAPI = require('./dataSources/parqueaderoAPI');
+const usuarioAPI = require('./dataSources/usuarioAPI');
+const vehiculoAPI = require('./dataSources/vehiculoAPI');
 
 const server = new ApolloServer({
 context: authentication,
         typeDefs,
         resolvers,
         dataSources : () => ({
-                        parqueadero_API : new parqueadero_API(),
-                        usuario_API : new usuario_API(),
-                        vehuculo_API   : new vehuculo_API() 
+                        parqueaderoAPI : new parqueaderoAPI(),
+                        usuarioAPI : new usuarioAPI(),
+                        vehiculoAPI   : new vehiculoAPI() 
         }),
 
         introspection: true,

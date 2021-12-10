@@ -13,13 +13,14 @@ const { gql } = require('apollo-server');
         type  vehiculoDetail {
             placa: String!
             propietario: String!
+            fecha_ingreso: String!
         }
 
         extend type Query {
             vehiculoByplaca(placa: String!): vehiculoDetail
         }
         extend type Mutation {
-            createvehiculo(VehiculoCrear: vehiculoCreate!): vehiculoDetail
+            createvehiculo(vehiculo: vehiculoCreate!): vehiculoDetail
             updatevehiculo(Vehiculoactualizar:  vehiculoUpdate!): vehiculoDetail
             deletevehiculo(vehiculoId:  String!): String
 

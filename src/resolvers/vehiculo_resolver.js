@@ -5,7 +5,7 @@ const vehiculoResolver = {
     Query: {
 
         vehiculoByplaca: async(_, {placa}, {dataSources}) => {
-            return await dataSources.vehiculoApi.getvehiculo(placa);
+            return await dataSources.vehiculoAPI.getvehiculo(placa);
         }
 
 
@@ -13,23 +13,23 @@ const vehiculoResolver = {
 
     Mutation: {
 
-        createvehiculo: async(_, {VehiculoCrear}, {dataSources}) =>{
+        createvehiculo: async(_, {vehiculo}, {dataSources}) =>{
             
-            const vehiculoNuevo = {
-                placa: VehiculoCrear.placa,
-                propietario: VehiculoCrear.propietario
+ /*           const vehiculoNuevo = {
+                placa      : vehiculo.placa,
+                propietario: vehiculo.propietario
 
 
-            } 
-            return await dataSources.vehiculoApi.createvehiculo(vehiculoNuevo);
+            } */
+            return await dataSources.vehiculoAPI.createvehiculo(vehiculo);
 
         },
         updatevehiculo: async(_, {Vehiculoactualizar}, {dataSources}) =>{
-                return await dataSources.vehiculoApi.updatevehiculo(Vehiculoactualizar);
+                return await dataSources.vehiculoAPI.updatevehiculo(Vehiculoactualizar);
 
         },
         deletevehiculo: async(_, {vehiculoId}, {dataSources}) =>{
-                return await dataSources.vehiculoApi.deletevehiculo(vehiculoId);
+                return await dataSources.vehiculoAPI.deletevehiculo(vehiculoId);
 
         },
     }

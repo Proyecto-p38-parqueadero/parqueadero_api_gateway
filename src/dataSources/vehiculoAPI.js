@@ -1,7 +1,7 @@
 const { RESTDataSource } = require('apollo-datasource-rest');
 const serverConfig = require('../server');
 
-class vehiculoApi extends RESTDataSource{
+class vehiculoAPI extends RESTDataSource{
     constructor() {
         super();
         this.baseURL = serverConfig.vehiculo_api_url;
@@ -26,4 +26,4 @@ class vehiculoApi extends RESTDataSource{
     
 }
 
-module.exports = vehiculoApi;
+module.exports = vehiculoAPI;
