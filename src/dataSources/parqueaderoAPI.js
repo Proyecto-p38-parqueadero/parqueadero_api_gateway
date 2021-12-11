@@ -18,9 +18,10 @@ class parqueaderoAPI extends RESTDataSource{
         
         return await this.delete(`/parking/delete/${parqueaderoId}/`);
     }
-    async updateparqueadero(ParqueaderoActualziar) {
-        ParqueaderoActualziar = new Object(JSON.parse(JSON.stringify({ refresh: ParqueaderoActualziar })));
-        return await this.put(`/parking/update/${ParqueaderoActualziar}/`, ParqueaderoActualziar);
+    async updateparqueadero(id,parqueaderoUpdate) {
+        parqueaderoUpdate = new Object(JSON.parse(JSON.stringify(parqueaderoUpdate)));
+        
+        return await this.put(`/parking/update/${id}/`, parqueaderoUpdate);
     }
     
 }

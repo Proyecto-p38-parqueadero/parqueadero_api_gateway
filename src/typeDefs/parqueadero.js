@@ -12,7 +12,7 @@ const { gql } = require('apollo-server');
         }
 
         
-        input parqueaderoloUpdate {
+        input parqueaderoUpdate {
             id: Int!
             nombre: String!
             administrador: String!
@@ -38,7 +38,7 @@ const { gql } = require('apollo-server');
     }
     extend type Mutation {
         createparqueaero(ParqueaderoCreate: ParkingCreate!): parqueaderoDetail
-        updateparqueadero(ParqueaderoActualziar:  parqueaderoloUpdate!): parqueaderoDetail
+        updateparqueadero(parqueaderoUpdate: parqueaderoUpdate!): parqueaderoDetail
         deleteparqueadero(parqueaderoId:  Int!): String
 
      }

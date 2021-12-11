@@ -28,8 +28,20 @@ const parqueaderoResolver = {
       },
 
 
-        updateparqueadero: async(_, {ParqueaderoActualziar}, {dataSources}) => {
-            return await dataSources.parqueaderoAPI.updateparqueadero(ParqueaderoActualziar);
+        updateparqueadero: async(_, {parqueaderoUpdate}, {dataSources}) => {
+            
+            const cambio = {
+                
+                "nombre": parqueaderoUpdate.nombre, 
+                "administrador": parqueaderoUpdate.administrador,
+                "telefono": parqueaderoUpdate.telefono,
+                "direccion": parqueaderoUpdate.direccion,
+                "email": parqueaderoUpdate.email,
+                "ciudad": parqueaderoUpdate.ciudad
+                
+            } 
+            return await dataSources.parqueaderoAPI.updateparqueadero(parqueaderoUpdate.id,cambio);
+
 
         },
 
