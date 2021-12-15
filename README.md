@@ -1,2 +1,5 @@
 # parqueadero_api_gateway
-this is a api gateway using GraphQl and apollo
+
+# Este es el API gateway usando GraphQl y apollo
+
+# utilizar el comando node src/index.js
